@@ -9,7 +9,7 @@
 <% @recipesList["recipes"].each do |recipeItem|%>
 	<tr class=<%= cycle('even','odd')%>>
 		 <td><%= link_to(image_tag(recipeItem["image_url"], size:"100"), recipeItem["f2f_url"])%></td>
-		 <td><%= link_to(recipeItem["title"],recipeItem["f2f_url"]) %></td>
+		 <td><%= link_to(sanitize(recipeItem["title"]),recipeItem["f2f_url"]) %></td>
 		 <td><%= recipeItem["social_rank"] %></td>
 <%end%>
 </table>
